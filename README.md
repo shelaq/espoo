@@ -12,3 +12,8 @@ $ brew install postgresql
 $ brew install postgis
 $ brew install gdal
 $ brew install libgeoip
+
+
+Run the server:
+cd espoo
+python3 manage.py runserver
