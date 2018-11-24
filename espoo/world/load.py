@@ -1,6 +1,6 @@
 import os
 from django.contrib.gis.utils import LayerMapping
-from .models import BusStops, EspooSmallRegions
+from .models import BusStops, EspooSmallRegions, EspooRegionData
 
 # http://data-hslhrt.opendata.arcgis.com/datasets/c3a01a65b7a0467cba2a14935be8c2a2_0?geometry=23.952%2C60.098%2C25.687%2C60.302&uiTab=table
 bus_stop_mapping = {
