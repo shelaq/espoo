@@ -2,24 +2,28 @@ from django.contrib.gis.db import models
 
 # Create your models here.
 
-class WorldBorder(models.Model):
+class BusStops(models.Model):
     # Regular Django fields corresponding to the attributes in the
     # world borders shapefile.
-    name = models.CharField(max_length=50)
-    area = models.IntegerField()
-    pop2005 = models.IntegerField('Population 2005')
-    fips = models.CharField('FIPS Code', max_length=2)
-    iso2 = models.CharField('2 Digit ISO', max_length=2)
-    iso3 = models.CharField('3 Digit ISO', max_length=3)
-    un = models.IntegerField('United Nations Code')
-    region = models.IntegerField('Region Code')
-    subregion = models.IntegerField('Sub-Region Code')
-    lon = models.FloatField()
-    lat = models.FloatField()
+    route = models.CharField('REITTI', max_length=100)
+    name = models.CharField('NIMI', max_length=100)
+    transport_type = models.IntegerField('VERKKO')
+    tariff_area = models.CharField('TARIFFIALU', max_length=2)
 
-    # GeoDjango-specific: a geometry field (MultiPolygonField)
-    mpoly = models.MultiPolygonField()
+    # GeoDjango-specific: a geometry field (PointField)
+    mpoly = models.PointField()
 
     # Returns the string representation of the model.
-    def __str__(self):              # __unicode__ on Python 2
+    def __str__(self):
         return self.name
+
+class EspooSmallRegions(models.Model):
+    kokotun = models.CharField(max_length=254)
+    kunta = models.CharField(max_length=254)
+    suur = models.CharField(max_length=254)
+    tila = models.CharField(max_length=254)
+    pien = models.CharField(max_length=254)
+    nimi = models.CharField(max_length=254)
+    nimi_iso = models.CharField(max_length=254)
+    mtryhm = models.IntegerField()
+    geom = models.MultiPolygonField(srid=4258)
