@@ -1,5 +1,6 @@
 # espoo
 
+
 Virtual environment:
 ```
 $ mkdir venv
@@ -22,6 +23,11 @@ Run the server:
 ```
 cd espoo
 python3 manage.py runserver
+```
+
+Example query:
+```
+http://127.0.0.1:8000/espooregions/query?lon=24.82427329877504&lat=60.185587549999994&year=2015
 ```
 
 

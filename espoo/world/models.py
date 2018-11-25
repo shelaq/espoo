@@ -28,6 +28,7 @@ class EspooSmallRegions(models.Model):
     mtryhm = models.IntegerField()
     geom = models.MultiPolygonField(srid=4258)
 
+# languages
 class EspooRegionalData(models.Model):
     district_id = models.IntegerField()
     year = models.IntegerField()
