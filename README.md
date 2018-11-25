@@ -40,7 +40,7 @@ The second part should be copied to `load.py`, with the necessary modifications 
 To migrate the data:
 ```
 python3 manage.py makemigrations (create model)
-python3 manage.py sqlmigrate world 000#
+python3 manage.py sqlmigrate world 00##
 python3 manage.py migrate
 
 python3 manage.py shell

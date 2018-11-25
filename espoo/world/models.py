@@ -28,8 +28,18 @@ class EspooSmallRegions(models.Model):
     mtryhm = models.IntegerField()
     geom = models.MultiPolygonField(srid=4258)
 
-class EspooRegionData(models.Model):
+class EspooRegionalData(models.Model):
     district_id = models.IntegerField()
     year = models.IntegerField()
     language_type = models.CharField(max_length=30)
     language_num_ppl_speak = models.IntegerField()
+
+class EspooPopulations(models.Model):
+    district_id = models.IntegerField()
+    year = models.IntegerField()
+    total_population = models.IntegerField(null=True)
+    moved_to_municipality = models.IntegerField(null=True)
+    sisainen_in_migration = models.IntegerField(null=True)
+    moved_from_municipality = models.IntegerField(null=True)
+    sisainen_out_migration = models.IntegerField(null=True)
+    total_net_migration = models.IntegerField(null=True)
